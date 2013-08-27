@@ -2,6 +2,9 @@
 // create custom plugin settings menu
 add_action('admin_menu', 'cubetech_icon_slider_create_menu');
 
+if($_GET['settings-updated'] == true)
+	echo '<div id="message" class="updated fade"><p>Einstellungen gespeichert.</p></div>';
+
 function cubetech_icon_slider_create_menu() {
 
 	//create new top-level menu
