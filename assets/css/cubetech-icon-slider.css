@@ -1,0 +1,25 @@
+.cubetech-icon-slider-container { margin-right: 20px; margin-top: 20px; }
+
+.cubetech-icon-slider { padding: 0; text-align: justify; margin: 0; }
+.cubetech-icon-slider li { display: inline-block; list-style: none; position: relative; text-align: center; max-width: 19.2%; box-sizing: border-box; }
+.cubetech-icon-slider hr { border-top: 1px solid #d6dfe4; margin: 0; padding: 0; margin-top: -20px; margin-bottom: 25px; }
+
+.cubetech-icon-slider-icon { padding: 20px 6px 0; }
+.cubetech-icon-slider-active { background-color: #edf5fa; }
+.cubetech-icon-slider-icon p { text-align: center; margin-top: 20px; vertical-align: middle; }
+.cubetech-icon-slider-empty { padding: 0; padding-left: 100%; }
+.cubetech-icon-slider-thumb-active-icon { display: none; display: inline-block; position: absolute; bottom: -13px; left: 0; right: 0; margin-left: auto; margin-right: auto; }
+.cubetech-icon-slider-thumb-active { background: url(../img/cubetech-icon-slider-active.png) no-repeat center center; }
+
+.cubetech-icon-slider-content { position: relative; min-height: 150px; }
+.cubetech-icon-slider-slide { position: absolute; top: 0; left: 0; background: white; width: 100%; display: none; }
+
+.cubetech-icon-slider-thumb-second { display: none; position: absolute; top: 20px; left: 0; right: 0; margin-left: auto; margin-right: auto; }
+.cubetech-icon-slider-thumb { position: relative; top: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 979px) {
+	
+	.cubetech-icon-slider-icon { padding: 20px 2px 0; }
+	.cubetech-icon-slider-icon p { font-size: 11px; min-height: 40px; display: inline-block; }
+	
+}
