@@ -70,9 +70,9 @@ function cubetech_icon_slider_content($posts) {
 		$link = '';
 
 		if(isset($post_meta_data['cubetech_icon_slider_externallink'][0]) && $post_meta_data['cubetech_icon_slider_externallink'][0] != '')
-			$link = '<span class="cubetech-icon-slider-link"><a href="' . $post_meta_data['cubetech_icon_slider_externallink'][0] . '" target="_blank">&raquo; MEHR</a></span>';
+			$link = '<span class="cubetech-icon-slider-link"><a href="' . $post_meta_data['cubetech_icon_slider_externallink'][0] . '" target="_blank">' . get_option('cubetech_icon_slider_link_title') . '</a></span>';
 		elseif ( $post_meta_data['cubetech_icon_slider_links'][0] != '' && $post_meta_data['cubetech_icon_slider_links'][0] != 'nope' && $post_meta_data['cubetech_icon_slider_links'][0] > 0 )
-			$link = '<span class="cubetech-icon-slider-link"><a href="' . get_permalink( $post_meta_data['cubetech_icon_slider_links'][0] ) . '">&raquo; MEHR</a></span>';
+			$link = '<span class="cubetech-icon-slider-link"><a href="' . get_permalink( $post_meta_data['cubetech_icon_slider_links'][0] ) . '">' . get_option('cubetech_icon_slider_link_title') . '</a></span>';
 
 		$args = array(
 		    'post_type' => 'attachment',

@@ -5,17 +5,23 @@ jQuery(function() {
 		clearTimeout(cubetechTimeOut);
 	});
 	jQuery('.cubetech-icon-slider').mouseout( function() {
-		cubetechTimeOut = setTimeout(showDiv, 2500);
+		cubetechTimeOut = setTimeout(cubetechShowDiv, 2500);
+	});
+	jQuery('.cubetech-icon-slider-content').mouseover( function() {
+		clearTimeout(cubetechTimeOut);
+	});
+	jQuery('.cubetech-icon-slider-content').mouseout( function() {
+		cubetechTimeOut = setTimeout(cubetechShowDiv, 2500);
 	});
 
-	showDiv();
+	cubetechShowDiv();
 	
 	jQuery('.cubetech-icon-slider-slide').first().fadeIn();
 	jQuery('.cubetech-icon-slider-thumb-second').first().fadeIn();
 	jQuery('.cubetech-icon-slider-thumb-active-icon').first().addClass('cubetech-icon-slider-thumb-active');
 	jQuery('.cubetech-icon-slider-icon').first().addClass('cubetech-icon-slider-active');
 
-	function showDiv() {
+	function cubetechShowDiv() {
 	    if(jQuery('.cubetech-icon-slider-slide').length) {
 	    	var cubetechID = jQuery('.cubetech-icon-slider-slide:visible').index();
 	    	
@@ -31,7 +37,7 @@ jQuery(function() {
 	    	jQuery('.cubetech-icon-slider-thumb-active-icon').eq(cubetechID + 1).addClass('cubetech-icon-slider-thumb-active');
 	    	jQuery('.cubetech-icon-slider-icon').eq(cubetechID + 1).addClass('cubetech-icon-slider-active');
 	    	
-	        cubetechTimeOut = setTimeout(showDiv, 5000);
+	        cubetechTimeOut = setTimeout(cubetechShowDiv, 5000);
 	    }
 	}
 	

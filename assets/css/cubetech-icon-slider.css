@@ -17,6 +17,10 @@
 .cubetech-icon-slider-thumb-second { display: none; position: absolute; top: 20px; left: 0; right: 0; margin-left: auto; margin-right: auto; }
 .cubetech-icon-slider-thumb { position: relative; top: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; }
 
+.cubetech-icon-slider-link { display: inline-block; background: url(../img/cubetech-icon-slider-button.png) no-repeat center center; height: 50px; width: 132px; line-height: 50px; text-align: center; }
+.cubetech-icon-slider-link a { color: white; text-decoration: none; display: inline-block; height: 100%; width: 100%; text-align: center; }
+.cubetech-icon-slider-link a:hover { color: white; }
+
 @media (max-width: 979px) {
 	
 	.cubetech-icon-slider-icon { padding: 20px 2px 0; }
