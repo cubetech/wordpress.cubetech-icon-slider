@@ -14,11 +14,11 @@ include_once('lib/cubetech-post-type.php');
 include_once('lib/cubetech-settings.php');
 include_once('lib/cubetech-shortcode.php');
 
-add_image_size( 'cubetech-icon-slider-thumb', 231, 124, true );
+add_image_size( 'cubetech-icon-slider-thumb', 203, 203, true );
 
 wp_enqueue_script('jquery');
 wp_register_script('cubetech_icon_slider_js', plugins_url('assets/js/cubetech-icon-slider.js', __FILE__), 'jquery');
-wp_enqueue_script('cubetech_icon_slider_js');
+//wp_enqueue_script('cubetech_icon_slider_js');
 
 add_action('wp_enqueue_scripts', 'cubetech_icon_slider_add_styles');
 

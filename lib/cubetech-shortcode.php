@@ -102,7 +102,7 @@ function cubetech_icon_slider_content($posts) {
 		$slidercontent .= '
 		<div class="cubetech-icon-slider-slide" id="cubetech-icon-slider-slide-' . $i . '">
 			' . $title . '
-			<p>' . $post->post_content . '</p>
+			<p>' . __(nl2br($post->post_content)) . '</p>
 			<p>' . $link . '</p>
 		</div>';
 		
@@ -111,7 +111,7 @@ function cubetech_icon_slider_content($posts) {
 	}
 	
 	
-	return $contentreturn . '<li class="cubetech-icon-slider-empty">&nbsp;</li><hr /></ul> ' . $slidercontent . '</div>';
+	return $contentreturn . '</ul> ' . $slidercontent . '</div>';
 	
 }
 ?>
