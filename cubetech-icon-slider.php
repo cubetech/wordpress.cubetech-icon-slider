@@ -9,6 +9,7 @@
  */
 
 include_once('lib/cubetech-install.php');
+include_once('lib/cubetech-group.php');
 include_once('lib/cubetech-metabox.php');
 include_once('lib/cubetech-post-type.php');
 include_once('lib/cubetech-settings.php');
@@ -60,14 +61,26 @@ function cubetech_icon_slider_dialog() {
 		'order' => 'ASC'
 	);
 	$taxonomies = get_terms('cubetech_icon_slider_group', $args);
-	
+
 	?>
 	<style type="text/css">
 		#cubetech_icon_slider_dialog { padding: 10px 30px 15px; }
 	</style>
 	<div style="display:none;" id="cubetech_icon_slider_dialog">
 		<div>
-			<p><input type="submit" class="button-primary" value="Icon Slider einfügen" onClick="tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-icon-slider]'); tinyMCEPopup.close();" /></p>
+			<p>Wählen Sie bitte die einzufügende Slider-Gruppe:</p>
+			<p><select name="taxonomy" id="cubetech_icon_slider_taxonomy">
+				<option value="">Bitte Gruppe auswählen</option>
+				<option value="all">Alle anzeigen</option>
+				<?php
+				foreach($taxonomies as $tax) :
+					echo '<option value="' . $tax->term_id . '">' . $tax->name . '</option>';
+				endforeach;
+				?>
+			</select></p>
+		</div>
+		<div>
+			<p><input type="submit" class="button-primary" value="Icon Slider einfügen" onClick="if ( jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value != '') { tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-icon-slider group=' + jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value + ']'); tinyMCEPopup.close(); }" /></p>
 		</div>
 	</div>
 	<?php

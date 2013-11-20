@@ -2,6 +2,7 @@
 function cubetech_icon_slider_shortcode($atts)
 {
 	extract(shortcode_atts(array(
+		'group'			=> false,
 		'orderby' 		=> 'menu_order',
 		'order'			=> 'asc',
 		'numberposts'	=> 999,
@@ -9,12 +10,20 @@ function cubetech_icon_slider_shortcode($atts)
 		'poststatus'	=> 'publish',
 	), $atts));
 	
+	$taxargs = false;
+	if($group != false && $group != 'all') {
+		$taxargs = array(
+		    array(
+		        'taxonomy' => 'cubetech_icon_slider_group',
+		        'terms' => $group,
+		        'field' => 'id',
+		    )
+		);
+	}
+	
 	$return = '';	
 
 	$return .= '<div class="cubetech-icon-slider-container">';
-	
-	if ( get_option('cubetech_icon_slider_show_groups') != false )
-		$return .= '<h2>' . $tax->name . '</h2>';
 	
 	$args = array(
 		'posts_per_page'  	=> 999,
@@ -24,7 +33,8 @@ function cubetech_icon_slider_shortcode($atts)
 		'order'           	=> $order,
 		'post_type'       	=> 'cubetech_icon_slider',
 		'post_status'     	=> $poststatus,
-		'suppress_filters' 	=> true,
+		'suppress_filters' 	=> false,
+		'tax_query' 		=> $taxargs,
 	);
 		
 	$posts = get_posts($args);
