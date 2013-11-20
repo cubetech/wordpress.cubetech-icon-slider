@@ -33,7 +33,7 @@ function cubetech_icon_slider_shortcode($atts)
 		'order'           	=> $order,
 		'post_type'       	=> 'cubetech_icon_slider',
 		'post_status'     	=> $poststatus,
-		'suppress_filters' 	=> false,
+		'suppress_filters' 	=> true,
 		'tax_query' 		=> $taxargs,
 	);
 		
