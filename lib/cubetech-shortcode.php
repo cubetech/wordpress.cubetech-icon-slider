@@ -3,6 +3,7 @@ function cubetech_icon_slider_shortcode($atts)
 {
 	extract(shortcode_atts(array(
 		'group'			=> false,
+		'hidecontent'	=> false,
 		'orderby' 		=> 'menu_order',
 		'order'			=> 'asc',
 		'numberposts'	=> 999,
@@ -39,7 +40,7 @@ function cubetech_icon_slider_shortcode($atts)
 		
 	$posts = get_posts($args);
 	
-	$return .= cubetech_icon_slider_content($posts);
+	$return .= cubetech_icon_slider_content($posts, $hidecontent);
 	
 	$return .= '<div class="cubetech-icon-slider-clear">';
 	
@@ -54,7 +55,7 @@ function cubetech_icon_slider_shortcode($atts)
 
 add_shortcode('cubetech-icon-slider', 'cubetech_icon_slider_shortcode');
 
-function cubetech_icon_slider_content($posts) {
+function cubetech_icon_slider_content($posts, $hidecontent = false) {
 
 	$contentreturn = '<ul class="cubetech-icon-slider">';
 	$slidercontent = '<div class="cubetech-icon-slider-content">';
@@ -120,8 +121,12 @@ function cubetech_icon_slider_content($posts) {
 
 	}
 	
+	if($hidecontent == 'true')
+		$slidercontent = '';
+	else
+		$slidercontent = $slidercontent . '</div>';
 	
-	return $contentreturn . '</ul> ' . $slidercontent . '</div>';
+	return $contentreturn . '</ul> ' . $slidercontent;
 	
 }
 ?>

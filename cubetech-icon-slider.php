@@ -78,9 +78,10 @@ function cubetech_icon_slider_dialog() {
 				endforeach;
 				?>
 			</select></p>
+			<p><input type="checkbox" name="content" id="cubetech_icon_slider_hide_content" value="true"> Content verbergen</p>
 		</div>
 		<div>
-			<p><input type="submit" class="button-primary" value="Icon Slider einfügen" onClick="if ( jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value != '') { tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-icon-slider group=' + jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value + ']'); tinyMCEPopup.close(); }" /></p>
+			<p><input type="submit" class="button-primary" value="Icon Slider einfügen" onClick="if ( jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value != '') { tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '[cubetech-icon-slider group=' + jQuery('#cubetech_icon_slider_taxonomy')[0].selectedOptions[0].value + ' hidecontent=' + jQuery('#cubetech_icon_slider_hide_content').prop('checked') + ']'); tinyMCEPopup.close(); }" /></p>
 		</div>
 	</div>
 	<?php
