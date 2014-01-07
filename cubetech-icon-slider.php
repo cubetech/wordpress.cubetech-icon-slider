@@ -3,7 +3,7 @@
  * Plugin Name: cubetech Icon Slider
  * Plugin URI: http://www.cubetech.ch
  * Description: cubetech Icon Slider - simple icon/content slider with featured images
- * Version: 1.0
+ * Version: 1.1.1
  * Author: cubetech GmbH
  * Author URI: http://www.cubetech.ch
  */
