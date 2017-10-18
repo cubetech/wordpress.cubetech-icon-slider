@@ -1,7 +1,9 @@
 <?php
 
-function cubetech_icon_slider_create_post_type() {
-	register_post_type('cubetech_icon_slider',
+function cubetech_icon_slider_create_post_type()
+{
+	register_post_type(
+		'cubetech_icon_slider',
 		array(
 			'labels' => array(
 				'name' => __('Icon Slider'),
@@ -30,5 +32,3 @@ function cubetech_icon_slider_create_post_type() {
 }
 
 add_action('init', 'cubetech_icon_slider_create_post_type', 99);
-
-?>
